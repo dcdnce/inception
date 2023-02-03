@@ -8,10 +8,9 @@ echo -e "\e[32mAdding user to sudo group...\e[0m"
 sleep 1 
 usermod -aG sudo pforesti
 
-echo -e "\e[32mInstalling git, vim, and vundle-vim...\e[0m"
+echo -e "\e[32mInstalling git, vim...\e[0m"
 sleep 2
 sudo apt install git vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 echo -e "\e[32mInstalling docker\e[0m"
 sleep 2
