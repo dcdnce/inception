@@ -3,4 +3,8 @@ FROM debian:buster
 RUN	apt update
 RUN	apt install -y nginx
 
-CMD ["bash"]
+COPY ./nginx.conf etc/nginx/conf.d/
+
+EXPOSE 3000
+
+CMD ["nginx",  "-g", "daemon off;"]
