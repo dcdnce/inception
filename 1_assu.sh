@@ -27,4 +27,6 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 echo -e "\e[32mRunning docker...\e[0m"
 sudo docker run hello-world
 
-echo -e "\e[31mDon't forget to update vimrc.\e[0m"
+echo -e "\e[31mSystem will now reboot.\e[0m"
+sleep 2
+systemctl reboot
