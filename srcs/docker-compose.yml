@@ -1,0 +1,21 @@
+version: '3'
+services:
+  nginx:
+    container_name: nginx
+    build: ./requirements/nginx
+    ports:
+      - 443:443
+    networks:
+      - inception_network
+    restart: always
+  #wordpress:
+    #container_name: wordpress
+    #build: ./requirements/wordpress
+    #ports:
+      #- 9000:9000
+    #networks:
+      #- inception_network
+    #restart: always
+
+networks:
+  inception_network:
