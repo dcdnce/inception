@@ -3,3 +3,5 @@ DID
 
 TODO
 - sucuri tutorial: install and configure wordpress from wp-cli
+- .env file
+- docker.compose without nginx ? (to test link between mariadb-wordpress)
