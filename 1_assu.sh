@@ -10,7 +10,7 @@ usermod -aG sudo pforesti
 
 echo -e "\e[32mInstalling git, vim, and other utilities\e[0m"
 sleep 2
-sudo apt install git vim tree
+sudo apt install vim tree
 
 echo -e "\e[32mInstalling docker\e[0m"
 sleep 2
@@ -28,5 +28,5 @@ echo -e "\e[32mRunning docker...\e[0m"
 sudo docker run hello-world
 
 echo -e "\e[31mSystem will now reboot.\e[0m"
-sleep 2
+sleep 3 
 systemctl reboot
