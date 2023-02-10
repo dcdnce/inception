@@ -1,8 +1,5 @@
 DID
-- php-fpm configuration to wordpress:9000 in nginx.conf
-- rudimentary Wordpress dockerfile
-- docker-compose.yml
+- mariadb basic install (waiting on wordpress for more)
 
 TODO
-- MariaDB container
 - sucuri tutorial: install and configure wordpress from wp-cli

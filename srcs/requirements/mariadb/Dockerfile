@@ -11,3 +11,5 @@ COPY mariadb_launch.sh .
 EXPOSE 3306
 
 ENTRYPOINT ./mariadb_launch.sh
+
+CMD mysqld --bind-adress=0.0.0.0

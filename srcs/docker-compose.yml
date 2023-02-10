@@ -16,16 +16,16 @@ services:
     networks:
       - inception_network
     restart: always
-  #wordpress:
-    #container_name: wordpress
-    #build: ./requirements/wordpress
-    #depens_on:
-      #- mariadb
-    #ports:
-      #- 9000:9000
-    #networks:
-      #- inception_network
-    #restart: always
+  wordpress:
+    container_name: wordpress
+    build: ./requirements/wordpress
+    depends_on:
+      - mariadb
+    ports:
+      - 9000:9000
+    networks:
+      - inception_network
+    restart: always
 
 networks:
   inception_network:
