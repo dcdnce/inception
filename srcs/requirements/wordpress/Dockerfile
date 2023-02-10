@@ -5,18 +5,23 @@ RUN apt install -y \
 	curl \
 	wget \
 	php \
-	php-fpm \
+	#fastcgi server
+	php-fpm \ 
+	#wordpress default db
 	php-mysql \
+	#images and miniatures
+	php-gd \
+	#xml, themes and plugins
+	php-xml \
+	#curl, http request etc.
+	php-curl \
 	&& rm -rf /var/lib/apt/lists/*
 
-# installing wordpress latest
-#RUN wget http://wordpress.org/latest.tar.gz && \
-#	tar xfz latest.tar.gz && \
-#	mv wordpress/* . && \
-#	rm -rf latest.tar.gz wordpress/
+
+
 # installing wp-cli
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
-EXPOSE: 9000
+EXPOSE 9000
 
 CMD ["bash"]
