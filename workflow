@@ -4,4 +4,5 @@ DID
 - docker-compose.yml
 
 TODO
+- MariaDB container
 - sucuri tutorial: install and configure wordpress from wp-cli
