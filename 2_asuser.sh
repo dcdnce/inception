@@ -15,11 +15,10 @@ sleep 1
 git clone https://github.com/dcdnce/dotfiles.git
 cp dotfiles/.vimrc ~/
 sudo rm -rf dotfiles/
+echo -e "\e[31mDon't forget to update Vundlevim.\e[0m"
 
 echo -e "\e[32mInstalling zsh & oh-my-zsh...\e[0m"
 sleep 1
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-
-echo -e "\e[31mDon't forget to update Vundlevim.\e[0m"

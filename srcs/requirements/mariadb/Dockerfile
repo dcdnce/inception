@@ -6,10 +6,15 @@ RUN apt install -y \
 	mariadb-client \
 	&& rm -rf /var/lib/apt/lists/*
 
+RUN mkdir -p /var/run/mysqld \
+&& chown -R mysql:mysql /var/run/mysqld \
+&& chmod 777 /var/run/mysqld
+
 COPY mariadb_launch.sh .
 
 EXPOSE 3306
 
 ENTRYPOINT ./mariadb_launch.sh
 
-CMD mysqld --bind-adress=0.0.0.0
+# Launches mysql daemon
+#CMD ["mysqld", "--bind-adress=0.0.0.0"]

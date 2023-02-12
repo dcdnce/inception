@@ -1,18 +1,16 @@
 version: '3'
 services:
-  nginx:
-    container_name: nginx
-    build: ./requirements/nginx
-    ports:
-      - 443:443
-    networks:
-      - inception_network
-    restart: always
+  #nginx:
+  #  container_name: nginx
+  #  build: ./requirements/nginx
+  #  ports:
+  #    - 443:443
+  #  networks:
+  #    - inception_network
+  #  restart: always
   mariadb:
     container_name: mariadb
     build: ./requirements/mariadb
-    ports:
-      - 3306:3306
     networks:
       - inception_network
     restart: always
@@ -21,8 +19,6 @@ services:
     build: ./requirements/wordpress
     depends_on:
       - mariadb
-    ports:
-      - 9000:9000
     networks:
       - inception_network
     restart: always
