@@ -13,6 +13,3 @@ RUN mkdir -p /var/run/mysqld \
 COPY mariadb_launch.sh .
 
 ENTRYPOINT ./mariadb_launch.sh
-
-# Launches mysql daemon
-#CMD ["mysqld", "--bind-adress=0.0.0.0"]
