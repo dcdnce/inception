@@ -1,2 +1,4 @@
 TODO
-- check if wordpress has already been installed
+	- check if wordpress has already been installed
+	if [ ! -f "path" ] -> if it doesnt exist
+	then

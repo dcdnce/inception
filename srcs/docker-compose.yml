@@ -15,10 +15,15 @@ services:
       - inception_network
     ports:
       - "3306:3306"
-    restart: always
-  wordpress:
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    #debug
     stdin_open: true
     tty: true
+
+
+  wordpress:
     container_name: wordpress
     build: ./requirements/wordpress
     depends_on:
@@ -27,7 +32,12 @@ services:
       - inception_network
     ports:
       - "9000:9000"
-    restart: always
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    #debug
+    stdin_open: true
+    tty: true
 
 
 networks:

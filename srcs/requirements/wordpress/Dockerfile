@@ -10,8 +10,12 @@ RUN apt install -y \
 	php-gd \
 	php-xml \
 	php-curl \
+	mariadb-client \
 	&& rm -rf /var/lib/apt/lists/*
 
-COPY ./wordpress_launch.sh .
+COPY wordpress_init.sh .
+RUN chmod 777 ./wordpress_init.sh
 
-ENTRYPOINT ./wordpress_launch.sh 
+RUN ./wordpress_init.sh 
+
+ENTRYPOINT bash

@@ -4,7 +4,7 @@
 sed -i "s/.*bind-address.*=.*/bind-address=0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
 
 # Check if db exists
-if [ -d "/var/lib/mysql/wordpress_db" ]
+if [ -d "/var/lib/mysql/$DB_NAME" ]
 then
 	echo "db already exists"
 else
@@ -19,11 +19,10 @@ service mysql start
 mysql -u root << _EOF_
 USE mysql
 FLUSH PRIVILEGES;
-CREATE USER 'ok'@'%' IDENTIFIED BY 'password';
-DELETE FROM mysql.user WHERE User='';
+CREATE USER '$DB_ADMIN'@'%' IDENTIFIED BY '$DB_PASS';
 DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
-CREATE DATABASE wordpress_db CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
-GRANT ALL PRIVILEGES ON wordpress_db.* TO 'ok'@'%';
+CREATE DATABASE $DB_NAME CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
+GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_ADMIN'@'%';
 FLUSH PRIVILEGES;
 _EOF_
 

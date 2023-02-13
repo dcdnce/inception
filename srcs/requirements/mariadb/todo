@@ -1,3 +1,5 @@
 todo -> 
-	- env
 	- password for root
+	- understand daemon launch --console
+	- what is chown var/lib/mysqld doing ?
+	- daemon launch in dockerfile (clearer)
