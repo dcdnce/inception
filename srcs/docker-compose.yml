@@ -13,15 +13,22 @@ services:
     build: ./requirements/mariadb
     networks:
       - inception_network
+    ports:
+      - "3306:3306"
     restart: always
   wordpress:
+    stdin_open: true
+    tty: true
     container_name: wordpress
     build: ./requirements/wordpress
     depends_on:
       - mariadb
     networks:
       - inception_network
+    ports:
+      - "9000:9000"
     restart: always
+
 
 networks:
   inception_network:

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Remote client access
+sed -i "s/.*bind-address.*=.*/bind-address=0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
+
+# Check if db exists
 if [ -d "/var/lib/mysql/wordpress_db" ]
 then
 	echo "db already exists"
@@ -24,13 +28,6 @@ FLUSH PRIVILEGES;
 _EOF_
 
 fi
-
-# Remote client access
-cat << _EOF_ > ./.my.cnf
-[mysqld]
-skip-networking=0
-bind-address = 0.0.0.0
-_EOF_
 
 # Start mariadb daemon
 exec mysqld --user=mysql --console

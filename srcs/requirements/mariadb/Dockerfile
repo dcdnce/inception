@@ -12,8 +12,6 @@ RUN mkdir -p /var/run/mysqld \
 
 COPY mariadb_launch.sh .
 
-EXPOSE 3306
-
 ENTRYPOINT ./mariadb_launch.sh
 
 # Launches mysql daemon
