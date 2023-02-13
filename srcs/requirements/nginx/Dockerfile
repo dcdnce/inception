@@ -11,7 +11,5 @@ RUN openssl req -x509 -newkey rsa:2048 -sha256 -nodes \
 
 COPY ./nginx.conf etc/nginx/conf.d/
 
-EXPOSE 443
-
 CMD ["nginx",  "-g", "daemon off;"]
 #CMD ["bash"]
