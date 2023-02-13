@@ -17,6 +17,3 @@ COPY wordpress_init.sh .
 RUN chmod 777 ./wordpress_init.sh
 
 ENTRYPOINT ./wordpress_init.sh 
-
-#RUN ./wordpress_init.sh 
-#ENTRYPOINT bash

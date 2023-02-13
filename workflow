@@ -1,4 +1,5 @@
 DID
+	- connected wordpress
+	- HOPE IT LASTS
 TODO
-	- find connection error wordpress/mariadb
-	- what is bridge network ?
+	- find php-fpm binary and launch it in wp script
