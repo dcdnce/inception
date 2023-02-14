@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 services:
   nginx:
     container_name: nginx
@@ -36,6 +36,8 @@ services:
     restart: unless-stopped
     env_file:
       - ./.env
+    volumes:
+      - wordpress_volume:/var/www/html/wordpress/
     #debug
     stdin_open: true
     tty: true
@@ -43,3 +45,11 @@ services:
 
 networks:
   inception_network:
+
+volumes:
+  wordpress_volume:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/${USER}/inception/srcs/data/html/wordpress/
+      o: bind

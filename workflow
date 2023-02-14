@@ -1,5 +1,4 @@
 DID
-	- connected wordpress
-	- HOPE IT LASTS
+	- understood file locations for server etc
 TODO
-	- find php-fpm binary and launch it in wp script
+	- trying to bind a volume from host to wordpress - to share later with nginx
