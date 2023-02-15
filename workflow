@@ -1,5 +1,5 @@
 DID
-	- understood file locations for server etc
-	- binded wordpress volume
+	- inception wordpress site working
+	- php-fpm working ?
 TODO
-	- trying to make php-fpm work
+	- access wp-admin (surely nginx.conf)

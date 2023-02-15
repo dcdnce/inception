@@ -8,9 +8,8 @@ if [ ! -f "wp-config.php" ]; then
 	wp core download --allow-root
 	wp config create --dbhost=$DB_HOST --dbname=$DB_NAME --dbuser=$DB_ADMIN --dbpass=$DB_PASS --allow-root
 	wp core install --url=https://$WP_URL/wordpress --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_PASS --admin_email=$WP_EMAIL --skip-email --allow-root
-	wp user create $WP_ADMIN $WP_EMAIL --role=author --user_pass=$WP_PASS --allow-root
-	#wp super-admin add $WP_USER --allow-root
+	wp user create $WP_USER $WP_EMAIL --role=author --user_pass=$WP_PASS --allow-root
 fi
 
-# Launch php-fpm -root -foreground
+# Launch php-fpm -foreground
 php-fpm7.3 -F
