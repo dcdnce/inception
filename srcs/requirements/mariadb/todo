@@ -1,4 +1,5 @@
 todo -> 
+	- why is it restarting 2 times ?
 	- password for root
 	- understand daemon launch --console
 	- what is chown var/lib/mysqld doing ?

@@ -1,13 +1,31 @@
-version: '3.7'
+version: '3.8'
+
+volumes:
+  wordpress_volume:
+    driver: local
+    driver_opts:
+      type: local
+      o: bind
+      device: /home/pforesti/inception/srcs/data/wordpress_volume/
+        #nocopy: true
+
 services:
   nginx:
     container_name: nginx
     build: ./requirements/nginx
+    depends_on:
+      - wordpress
     ports:
       - 443:443
     networks:
       - inception_network
     restart: unless-stopped
+    volumes:
+      - wordpress_volume:/var/www/html/wordpress/
+    #debug
+    stdin_open: true
+    tty: true
+
 
   mariadb:
     container_name: mariadb
@@ -45,11 +63,3 @@ services:
 
 networks:
   inception_network:
-
-volumes:
-  wordpress_volume:
-    driver: local
-    driver_opts:
-      type: none
-      device: /home/${USER}/inception/srcs/data/html/wordpress/
-      o: bind

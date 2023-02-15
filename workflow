@@ -1,4 +1,5 @@
 DID
 	- understood file locations for server etc
+	- binded wordpress volume
 TODO
-	- trying to bind a volume from host to wordpress - to share later with nginx
+	- trying to make php-fpm work
