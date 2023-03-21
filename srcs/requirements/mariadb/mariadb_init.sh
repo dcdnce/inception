@@ -10,7 +10,7 @@ then
 else
 
 # Initialize system tables (to manage privileges, roles, plugins...)
-mysql_install_db --user=mysql --skip-test-db >> /dev/null
+mysql_install_db --basedir=/usr --datadir=/var/lib/mysql --user=mysql --skip-test-db >> /dev/null
 
 # Start mariadb cli
 service mysql start

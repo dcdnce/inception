@@ -6,8 +6,16 @@ volumes:
     driver_opts:
       type: local
       o: bind
-      device: /home/pforesti/inception/srcs/data/wordpress_volume/
+      device: /home/difool/Projects/inception/srcs/data/wordpress_volume/
         #nocopy: true
+  mariadb_volume:
+    driver: local
+    driver_opts:
+      type: local
+      o: bind
+      device: /home/difool/Projects/inception/srcs/data/mariadb_volume/
+        #nocopy: true
+
 
 services:
   nginx:
@@ -37,6 +45,8 @@ services:
     restart: unless-stopped
     env_file:
       - ./.env
+    volumes:
+      - mariadb_volume:/var/lib/mysql/
     #debug
     stdin_open: true
     tty: true

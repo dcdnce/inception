@@ -1,5 +1,5 @@
 DID
-	- inception wordpress site working
 	- php-fpm working ?
+	- created mariadb volume
 TODO
 	- access wp-admin (surely nginx.conf)
