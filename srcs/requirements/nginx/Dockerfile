@@ -9,9 +9,9 @@ RUN openssl req -x509 -newkey rsa:2048 -sha256 -nodes \
 	-out /etc/nginx/pforesti.crt \
 	-subj "/C=FR/ST=Nice/L=Nice/O=42 Nice/OU=pforesti/CN=pforesti"
 
-COPY ./nginx.conf etc/nginx/conf.d/
+COPY ./nginx.conf etc/nginx/conf.d
 
-RUN echo "<?php echo phpinfo();?>" > /var/www/html/info.php
-RUN chmod a+x /var/www/html/info.php
+#RUN echo "<?php echo phpinfo();?>" > /var/www/html/info.php
+#RUN chmod a+x /var/www/html/info.php
 
 CMD ["nginx",  "-g", "daemon off;"]

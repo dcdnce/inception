@@ -1,4 +1,5 @@
-if [ ! -f "wp-config.php" ]; then
+if [ ! -f "wp-config.php" ];
+then
 	# Download wp-cli & path it as "wp"
 	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 	chmod +x wp-cli.phar

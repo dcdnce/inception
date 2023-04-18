@@ -14,7 +14,3 @@ COPY mariadb_init.sh .
 RUN chmod 777 ./mariadb_init.sh
 
 ENTRYPOINT ./mariadb_init.sh
-
-#debug
-#RUN ./mariadb_init.sh
-#ENTRYPOINT bash

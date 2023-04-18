@@ -1,6 +1,3 @@
 todo -> 
-	- why is it restarting 2 times ?
+	- why restarting 2 times ?
 	- password for root
-	- understand daemon launch --console
-	- what is chown var/lib/mysqld doing ?
-	- daemon launch in dockerfile (clearer)

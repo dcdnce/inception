@@ -7,8 +7,15 @@ RUN apt install -y \
 	php \
 	php-fpm \ 
 	php-mysql \
+	php-mysqli \
+	php-json \
+	php-dom \
+	php-exif \
+	php-fileinfo \
+	php-mbstring \
 	php-gd \
 	php-xml \
+	php-zip \
 	php-curl \
 	mariadb-client \
 	&& rm -rf /var/lib/apt/lists/*
@@ -21,5 +28,6 @@ WORKDIR /var/www/html/wordpress
 
 COPY wordpress_init.sh .
 RUN chmod 777 ./wordpress_init.sh
+#RUN chmod 777 ./*
 
 ENTRYPOINT ./wordpress_init.sh 

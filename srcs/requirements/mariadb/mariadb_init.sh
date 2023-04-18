@@ -28,5 +28,5 @@ _EOF_
 
 fi
 
-# Start mariadb daemon
+# Start mariadb daemon - logging output to console
 exec mysqld --user=mysql --console
