@@ -29,7 +29,7 @@ services:
       - inception_network
     restart: unless-stopped
     volumes:
-      - wordpress_volume:/var/www/html/wordpress/
+      - wordpress_volume:/var/www/html/
     #debug
     stdin_open: true
     tty: true
@@ -65,7 +65,7 @@ services:
     env_file:
       - ./.env
     volumes:
-      - wordpress_volume:/var/www/html/wordpress/
+      - wordpress_volume:/var/www/html/
     #debug
     stdin_open: true
     tty: true

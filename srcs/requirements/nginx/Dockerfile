@@ -11,7 +11,4 @@ RUN openssl req -x509 -newkey rsa:2048 -sha256 -nodes \
 
 COPY ./nginx.conf etc/nginx/conf.d
 
-#RUN echo "<?php echo phpinfo();?>" > /var/www/html/info.php
-#RUN chmod a+x /var/www/html/info.php
-
 CMD ["nginx",  "-g", "daemon off;"]

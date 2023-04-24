@@ -1,6 +1,17 @@
-DID
+GENERAL
+did
 	- php-fpm working
 	- created mariadb volume
-TODO
+	- access wp-admin (wrong wordpress path)
+todo
 	- js/css not working
-	- access wp-admin (surely nginx.conf)
+
+WP
+	- daemon launch in dockerfile
+
+MARIADB
+	- why restarting 2 times ?
+	- password for root
+
+NGINX
+	- redirect from http to https

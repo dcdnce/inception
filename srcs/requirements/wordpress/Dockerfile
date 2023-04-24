@@ -24,7 +24,7 @@ RUN apt install -y \
 RUN mkdir -p /run/php/
 COPY www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
-WORKDIR /var/www/html/wordpress
+WORKDIR /var/www/html/
 
 COPY wordpress_init.sh .
 RUN chmod 777 ./wordpress_init.sh
