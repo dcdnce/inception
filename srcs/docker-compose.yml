@@ -6,14 +6,14 @@ volumes:
     driver_opts:
       type: local
       o: bind
-      device: /home/pforesti/inception/srcs/data/wordpress_volume/
+      device: /home/pforesti/data/wordpress_volume/
         #nocopy: true
   mariadb_volume:
     driver: local
     driver_opts:
       type: local
       o: bind
-      device: /home/pforesti/inception/srcs/data/mariadb_volume/
+      device: /home/pforesti/data/mariadb_volume/
         #nocopy: true
 
 

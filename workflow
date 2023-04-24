@@ -1,16 +1,15 @@
 GENERAL
-	- good data path
-	- containers restart: always
 	- domain name
+	- port forward to host ?
 	- makefile
-	- last check evaluation file
+	- last check -> evaluation file
 
 WP
 	- daemon launch in dockerfile
-	- two users (one admin, one author or else)
+	- second user
 
 MARIADB
-	- why restarting 2 times ?
+	- why restarting ?
 
 NGINX
 	- redirect from http to https
