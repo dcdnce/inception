@@ -1,15 +1,18 @@
 GENERAL
 	- domain name
-	- port forward to host ?
-	- makefile
-	- last check -> evaluation file
+	- before eval:
+		- login to db
+		- relearn image, compose, etc
+		- relearn tls certif
 
 WP
 	- daemon launch in dockerfile
 	- second user
+	- php-7.4
 
 MARIADB
 	- why restarting ?
+	- password for root
 
 NGINX
-	- redirect from http to https
+	- ban http (only port 443)

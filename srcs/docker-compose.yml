@@ -41,7 +41,7 @@ services:
     networks:
       - inception_network
     ports:
-      - "3306:3306"
+      - 3306:3306
     restart: unless-stopped
     env_file:
       - ./.env
@@ -60,7 +60,7 @@ services:
     networks:
       - inception_network
     ports:
-      - "9000:9000"
+      - 9000:9000
     restart: unless-stopped
     env_file:
       - ./.env
