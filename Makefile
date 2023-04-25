@@ -3,6 +3,8 @@ all:
 	@mkdir --verbose -p /home/${USER}/data/mariadb_volume
 	docker compose -f ./srcs/docker-compose.yml up --build
 
+up: all
+
 down:
 	docker compose -f ./srcs/docker-compose.yml down
 
@@ -19,4 +21,4 @@ clean: down
 prune: clean
 	@docker system prune -a -f --volumes
 
-.PHONY: all re down clean prune
+.PHONY: all up re down clean prune

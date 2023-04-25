@@ -1,18 +1,16 @@
 GENERAL
-	- domain name
+	- nginx redirection
 	- before eval:
-		- login to db
+		- login to db (root + second user)
 		- relearn image, compose, etc
 		- relearn tls certif
 
 WP
 	- daemon launch in dockerfile
-	- second user
-	- php-7.4
 
 MARIADB
 	- why restarting ?
 	- password for root
+	- daemon launch in dockerfile
 
 NGINX
-	- ban http (only port 443)
