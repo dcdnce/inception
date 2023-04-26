@@ -22,12 +22,11 @@ RUN apt install -y \
 
 # Needed for php-fpm to work + conf file
 RUN mkdir -p /run/php/
-COPY www.conf /etc/php/7.3/fpm/pool.d/www.conf
+COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
 WORKDIR /var/www/html/
 
-COPY wordpress_init.sh .
+COPY ./tools/wordpress_init.sh .
 RUN chmod 777 ./wordpress_init.sh
-#RUN chmod 777 ./*
 
 ENTRYPOINT ./wordpress_init.sh 

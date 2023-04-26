@@ -6,11 +6,9 @@ GENERAL
 		- -d in makefile
 
 WP
-	- daemon launch in dockerfile
 
 MARIADB
 	- why restarting ?
 	- password for root
-	- daemon launch in dockerfile
 
 NGINX

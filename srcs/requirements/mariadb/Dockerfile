@@ -10,7 +10,7 @@ RUN mkdir -p /var/run/mysqld \
 && chown -R mysql:mysql /var/run/mysqld \
 && chmod 777 /var/run/mysqld
 
-COPY mariadb_init.sh .
+COPY ./tools/mariadb_init.sh .
 RUN chmod 777 ./mariadb_init.sh
 
 ENTRYPOINT ./mariadb_init.sh
