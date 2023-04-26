@@ -7,9 +7,9 @@ then
 
 	# Download and install wordpress
 	wp core download --allow-root
-	wp config create --dbhost=$DB_HOST --dbname=$DB_NAME --dbuser=$DB_ADMIN --dbpass=$DB_PASS --allow-root
-	wp core install --url=$WP_URL/ --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_PASS --admin_email=$WP_ADMIN_EMAIL --skip-email --allow-root
-	wp user create $WP_USER $WP_USER_EMAIL --role=author --user_pass=$WP_PASS --allow-root
+	wp config create --dbhost=$DB_HOST --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_USER_PASS --allow-root
+	wp core install --url=$WP_URL/ --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_ADMIN_PASS --admin_email=$WP_ADMIN_EMAIL --skip-email --allow-root
+	wp user create $WP_USER $WP_USER_EMAIL --role=author --user_pass=$WP_USER_PASS --allow-root
 fi
 
 # Launch php-fpm -foreground

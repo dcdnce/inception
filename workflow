@@ -1,4 +1,5 @@
 GENERAL
+	- mariadb root password
 	- before eval:
 		- login to db (root + second user)
 		- relearn image, compose, etc
@@ -9,6 +10,5 @@ WP
 
 MARIADB
 	- why restarting ?
-	- password for root
 
 NGINX

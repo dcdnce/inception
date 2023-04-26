@@ -8,8 +8,6 @@ up: all
 down:
 	docker compose -f ./srcs/docker-compose.yml down
 
-re: down all
-
 clean: down
 	-docker stop $$(docker ps -qa)
 	-docker rm $$(docker ps -qa)
@@ -17,6 +15,8 @@ clean: down
 	-docker volume rm $$(docker volume ls -q) 
 	-docker network rm srcs_inception_network
 	sudo rm -rf /home/$(USER)/data/
+
+re: down all
 
 prune: clean
 	@docker system prune -a -f --volumes
