@@ -1,3 +1,10 @@
+#!/bin/bash
+
+# Waiting for mariadb container
+while ! mysqladmin ping -h$DB_HOST -u$DB_USER -p$DB_USER_PASS --silent; do
+	sleep 3
+done
+
 if [ ! -f "wp-config.php" ];
 then
 	# Download wp-cli & path it as "wp"

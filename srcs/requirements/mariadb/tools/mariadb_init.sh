@@ -11,12 +11,9 @@ sed -i "s/.*bind-address.*=.*/bind-address=0.0.0.0/g" /etc/mysql/mariadb.conf.d/
 # Initialize system tables (to manage privileges, roles, plugins...)
 mysql_install_db --basedir=/usr --datadir=/var/lib/mysql --user=mysql --skip-test-db >> /dev/null
 
-# Start mariadb cli
-service mysql start
-
 # MariaDB shenanigans - db, user, and root
-mysql -u root << _EOF_
-USE mysql
+mysqld -u mysql --bootstrap << _EOF_
+USE mysql;
 FLUSH PRIVILEGES;
 DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
 ALTER USER 'root'@'localhost' IDENTIFIED BY '$DB_ROOT_PASS';
