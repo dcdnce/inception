@@ -2,6 +2,7 @@
 
 # Waiting for mariadb container
 while ! mysqladmin ping -h$DB_HOST -u$DB_USER -p$DB_USER_PASS --silent; do
+	echo "waiting fo mariadb..."
 	sleep 3
 done
 

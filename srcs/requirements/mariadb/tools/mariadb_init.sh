@@ -1,12 +1,13 @@
 #!/bin/bash
+
+# Remote client access
+sed -i "s/.*bind-address.*=.*/bind-address=0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
+
 # Check if db exists
 if [ -d "/var/lib/mysql/$DB_NAME" ]
 then
 	echo "db already exists"
 else
-
-# Remote client access
-sed -i "s/.*bind-address.*=.*/bind-address=0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
 
 # Initialize system tables (to manage privileges, roles, plugins...)
 mysql_install_db --basedir=/usr --datadir=/var/lib/mysql --user=mysql --skip-test-db >> /dev/null
@@ -26,4 +27,5 @@ _EOF_
 fi
 
 # Start mariadb daemon - logging output to console
+echo "mariadb ready"
 exec mysqld --user=mysql --console
